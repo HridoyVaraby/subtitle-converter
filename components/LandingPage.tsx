@@ -27,9 +27,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </p>
       <button
         onClick={onGetStarted}
-        className="bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/30"
+        className="bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/30 animate-bounce hover:animate-none"
+        style={{
+          animationDuration: '3s',
+          animationIterationCount: 'infinite'
+        }}
       >
-        Sign Up to Get Started
+        Get Started
       </button>
 
       <div className="mt-20 md:mt-32 w-full max-w-5xl">

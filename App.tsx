@@ -33,9 +33,9 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-white text-dark font-sans flex flex-col">
       <header className="py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-200">
         <h1 className="text-xl md:text-2xl font-bold tracking-tight">
-          <span className="text-primary">Gemini</span> Subtitle Translator
+          <span className="text-primary">Varabit</span> Subtitle Translator
         </h1>
-        <a href="https://github.com/google/generative-ai-docs/tree/main/site/en/gemini-api/docs/applications/prompting_with_media" target="_blank" rel="noopener noreferrer" className="text-dark hover:text-accent transition-colors">
+        <a href="https://github.com/HridoyVaraby/subtitle-translator" target="_blank" rel="noopener noreferrer" className="text-dark hover:text-accent transition-colors">
           {GithubIcon}
         </a>
       </header>
@@ -49,7 +49,7 @@ const App: React.FC = () => {
       </main>
       
       <footer className="text-center py-4 px-6 text-sm text-gray-500 border-t border-gray-200">
-        Powered by Google Gemini. Built with React & Tailwind CSS.
+        Developed by <a href="https://varabit.com" className="text-primary hover:text-accent">Varabit web Design & Development</a>
       </footer>
     </div>
   );
