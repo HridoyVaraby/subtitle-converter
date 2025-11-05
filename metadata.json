@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Subtitle Translator",
+  "description": "A web application that uses the Google Gemini API to translate movie subtitle files (.srt) with a focus on preserving natural tone, emotion, and pacing. Users can upload an SRT file, select source and target languages, and download the translated version.",
+  "requestFramePermissions": []
+}
