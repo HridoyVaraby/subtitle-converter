@@ -18,7 +18,7 @@
             },
             colors: {
               primary: '#3F51B5', // Deep Indigo
-              accent: '#FF6F61',  // Soft Coral
+              accent: '#8B5CF6',  // Purple
               dark: '#333333',     // Dark Gray
               success: '#4CAF50', // Emerald Green
               danger: '#F44336',  // Warm Red
@@ -75,6 +75,86 @@
       /* Subtle glow effect for primary elements */
       .glow-primary {
         box-shadow: 0 0 20px rgba(63, 81, 181, 0.15);
+      }
+
+      /* Eye-catching button animation */
+      @keyframes pulse-glow {
+        0% {
+          box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2), 0 0 60px rgba(139, 92, 246, 0.1);
+          transform: scale(1);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.4), 0 0 90px rgba(139, 92, 246, 0.2);
+          transform: scale(1.05);
+        }
+        100% {
+          box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2), 0 0 60px rgba(139, 92, 246, 0.1);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .eye-catching-button {
+        animation: pulse-glow 2s ease-in-out infinite, float 3s ease-in-out infinite;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .eye-catching-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shine 2s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Sparkle effect */
+      .eye-catching-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        animation: sparkle 1.5s infinite;
+      }
+
+      @keyframes sparkle {
+        0% {
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          width: 100px;
+          height: 100px;
+          opacity: 0;
+        }
       }
     </style>
   <script type="importmap">

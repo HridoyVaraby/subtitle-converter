@@ -46,16 +46,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <div className="animate-fade-in-up stagger-3">
             <button
               onClick={onGetStarted}
-              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-bold py-4 px-12 rounded-full text-xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-primary/25 glow-primary"
-              style={{
-                animation: 'bounce 3s infinite'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.animationPlayState = 'paused';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.animationPlayState = 'running';
-              }}
+              className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-12 rounded-full text-xl shadow-2xl glow-primary eye-catching-button"
             >
               Get Started
             </button>
@@ -133,7 +124,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </p>
           <button
             onClick={onGetStarted}
-            className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+            className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl transition-all duration-300"
           >
             Start Translating Now
           </button>
