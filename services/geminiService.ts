@@ -14,7 +14,6 @@ export const translateSubtitles = async (
   const ai = new GoogleGenAI({ apiKey });
 
   const translatedSubtitles: SubtitleBlock[] = [];
-  const totalBatches = Math.ceil(subtitles.length / BATCH_SIZE);
 
   for (let i = 0; i < subtitles.length; i += BATCH_SIZE) {
     const batch = subtitles.slice(i, i + BATCH_SIZE);
@@ -89,7 +88,9 @@ ${JSON.stringify(subtitlesToTranslate)}
         const translatedText = translationMap.get(originalSubtitle.index);
         // If a translation is missing for any reason, gracefully fall back to the original text.
         if (translatedText === undefined) {
-             console.warn(`Missing translation for subtitle index: ${originalSubtitle.index}. Using original text.`);
+             if (__DEV__) {
+               console.warn(`Missing translation for subtitle index: ${originalSubtitle.index}. Using original text.`);
+             }
         }
         return {
           ...originalSubtitle,
@@ -102,7 +103,9 @@ ${JSON.stringify(subtitlesToTranslate)}
       onProgress(Math.min(progress, 100));
 
     } catch (error) {
-      console.error('Error translating batch:', error);
+      if (__DEV__) {
+        console.error('Error translating batch:', error);
+      }
       let details = error instanceof Error ? error.message : String(error);
       if (details.includes("JSON")) {
           details = "The API returned a response that could not be parsed as valid JSON. This might be due to content safety filters or an unexpected model output format."

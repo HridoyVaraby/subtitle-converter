@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react';
-import { SubtitleBlock } from '../types';
 import { LANGUAGES } from '../constants';
 import { parseSrt, stringifySrt } from '../services/srtParser';
 import { translateSubtitles } from '../services/geminiService';

@@ -11,6 +11,8 @@
     <meta name="keywords" content="subtitle translator, movie subtitles, SRT translation, AI translation, Google Gemini, subtitle converter, multilingual subtitles" />
     <meta name="author" content="Varabit Web Design & Development" />
     <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -19,6 +21,7 @@
     <meta property="og:description" content="Translate movie subtitles with emotional fidelity using Google Gemini. Preserve tone, meaning, and cinematic flow." />
     <meta property="og:image" content="https://subtitle-translator.vercel.app/og-image.png" />
     <meta property="og:site_name" content="SubTranslate" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -36,12 +39,24 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#3F51B5" />
     <meta name="msapplication-TileColor" content="#3F51B5" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://aistudiocdn.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://aistudiocdn.com" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Prefetch key resources -->
+    <link rel="prefetch" href="https://aistudiocdn.com/react@^19.2.0" as="script" />
+    <link rel="prefetch" href="https://aistudiocdn.com/@google/genai@^1.28.0" as="script" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>

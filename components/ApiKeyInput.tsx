@@ -15,14 +15,19 @@ const ApiKeyInput: React.FC<ApiKeyInputProps> = ({ onSave }) => {
     }
   };
 
-  const copyToClipboard = async () => {
+  const copyToClipboard = async (text: string) => {
     try {
-      await navigator.clipboard.writeText('AIzaSyA0K19LXD62-ovyNMK4t97NBxGkMOfjVe4');
+      await navigator.clipboard.writeText(text);
       setCopyStatus('copied');
       setTimeout(() => setCopyStatus('idle'), 2000);
     } catch (err) {
       console.error('Failed to copy text: ', err);
     }
+  };
+
+  const getTempApiKey = () => {
+    // This is a demo key - users should use their own
+    return 'AIzaSyA0K19LXD62-ovyNMK4t97NBxGkMOfjVe4';
   };
 
   return (
@@ -75,10 +80,10 @@ const ApiKeyInput: React.FC<ApiKeyInputProps> = ({ onSave }) => {
               </p>
               <div className="flex items-center space-x-2">
                 <code className="bg-white px-4 py-3 rounded-lg border text-sm font-mono text-gray-800 flex-1 break-all shadow-sm">
-                  AIzaSyA0K19LXD62-ovyNMK4t97NBxGkMOfjVe4
+                  {getTempApiKey()}
                 </code>
                 <button
-                  onClick={copyToClipboard}
+                  onClick={() => copyToClipboard(getTempApiKey())}
                   aria-label="Copy API key to clipboard"
                   className={`flex-shrink-0 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 ${
                     copyStatus === 'copied'
