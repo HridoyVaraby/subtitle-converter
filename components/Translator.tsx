@@ -43,6 +43,7 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -55,6 +56,50 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
       }
       setFile(selectedFile);
       setFileName(selectedFile.name);
+      setError(null);
+      setDownloadUrl(null);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDragEnter = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Only set isDragging to false if we're leaving the drop zone entirely
+    // Check if the relatedTarget is outside the drop zone
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX;
+    const y = e.clientY;
+    if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) {
+      setIsDragging(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const droppedFile = e.dataTransfer.files?.[0];
+    if (droppedFile) {
+      if (!droppedFile.name.endsWith('.srt')) {
+        setError('Invalid file type. Please upload a .srt file.');
+        setFile(null);
+        setFileName('');
+        return;
+      }
+      setFile(droppedFile);
+      setFileName(droppedFile.name);
       setError(null);
       setDownloadUrl(null);
     }
@@ -119,9 +164,25 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
         <label htmlFor="file-upload" className="block text-sm font-medium text-gray-700 mb-1">
           1. Upload Subtitle File
         </label>
-        <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+        <div
+          className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md transition-colors ${
+            isDragging ? 'border-primary bg-primary/5' : 'border-gray-300'
+          }`}
+          onDragOver={handleDragOver}
+          onDragEnter={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
           <div className="space-y-1 text-center">
-             <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true"><path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg
+              className={`mx-auto h-12 w-12 ${isDragging ? 'text-primary' : 'text-gray-400'}`}
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
             <div className="flex text-sm text-gray-600">
               <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-accent hover:text-red-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary">
                 <span>Upload a file</span>
@@ -131,6 +192,7 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
             </div>
             <p className="text-xs text-gray-500">.SRT files only</p>
             {fileName && <p className="text-sm text-success pt-2">{fileName}</p>}
+            {isDragging && <p className="text-sm text-primary font-medium pt-2">Drop your .srt file here</p>}
           </div>
         </div>
       </div>
