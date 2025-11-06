@@ -148,25 +148,26 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-lg p-6 sm:p-8 border border-gray-200 shadow-md space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="max-w-3xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-card hover:shadow-card-hover transition-shadow duration-300 space-y-6">
+      <div className="flex justify-between items-center pb-4 border-b border-gray-100">
         <h2 className="text-2xl font-bold text-dark">Translator Dashboard</h2>
         <button
           onClick={onClearApiKey}
-          className="text-sm text-gray-600 hover:text-accent font-semibold py-1 px-3 rounded-md transition-colors"
+          className="text-sm text-gray-600 hover:text-accent font-semibold py-2 px-4 rounded-lg transition-colors duration-200 hover:bg-gray-50"
+          aria-label="Change API Key"
         >
           Change API Key
         </button>
       </div>
 
       {/* File Upload */}
-      <div>
-        <label htmlFor="file-upload" className="block text-sm font-medium text-gray-700 mb-1">
+      <div className="bg-gray-50 rounded-xl p-6">
+        <label htmlFor="file-upload" className="block text-sm font-medium text-gray-700 mb-3">
           1. Upload Subtitle File
         </label>
         <div
-          className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md transition-colors ${
-            isDragging ? 'border-primary bg-primary/5' : 'border-gray-300'
+          className={`flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-xl transition-all duration-300 ${
+            isDragging ? 'border-primary bg-primary/5 scale-[1.02]' : 'border-gray-300 hover:border-primary/50'
           }`}
           onDragOver={handleDragOver}
           onDragEnter={handleDragEnter}
@@ -184,61 +185,78 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
               <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <div className="flex text-sm text-gray-600">
-              <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-accent hover:text-red-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary">
+              <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-lg font-medium text-accent hover:text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary transition-colors px-3 py-1">
                 <span>Upload a file</span>
                 <input id="file-upload" name="file-upload" type="file" className="sr-only" accept=".srt" onChange={handleFileChange} />
               </label>
               <p className="pl-1">or drag and drop</p>
             </div>
             <p className="text-xs text-gray-500">.SRT files only</p>
-            {fileName && <p className="text-sm text-success pt-2">{fileName}</p>}
+            {fileName && <p className="text-sm text-success pt-2 font-medium">{fileName}</p>}
             {isDragging && <p className="text-sm text-primary font-medium pt-2">Drop your .srt file here</p>}
           </div>
         </div>
       </div>
       
       {/* Language Selection */}
-      <div>
-         <p className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="bg-gray-50 rounded-xl p-6">
+         <p className="block text-sm font-medium text-gray-700 mb-3">
           2. Select Languages
         </p>
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <LanguageSelect id="source-lang" value={sourceLang} onChange={e => setSourceLang(e.target.value)} label="From" />
-           <div className="text-gray-500 pt-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div className="flex-1 w-full">
+            <LanguageSelect id="source-lang" value={sourceLang} onChange={e => setSourceLang(e.target.value)} label="From" />
+          </div>
+           <div className="text-gray-400 pt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
            </div>
-          <LanguageSelect id="target-lang" value={targetLang} onChange={e => setTargetLang(e.target.value)} label="To" />
+          <div className="flex-1 w-full">
+            <LanguageSelect id="target-lang" value={targetLang} onChange={e => setTargetLang(e.target.value)} label="To" />
+          </div>
         </div>
       </div>
 
       {/* Action Button */}
       <div className="pt-2">
-         <p className="block text-sm font-medium text-gray-700 mb-2">
+         <p className="block text-sm font-medium text-gray-700 mb-3">
           3. Translate & Download
         </p>
         {!isLoading && !downloadUrl && (
           <button
             onClick={handleTranslate}
             disabled={!file || isLoading}
-            className="w-full bg-primary hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-md transition-colors duration-300"
+            className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
           >
             Translate Subtitles
           </button>
         )}
-        
+
         {isLoading && (
-           <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-             <div className="bg-primary h-4 rounded-full transition-all duration-500" style={{ width: `${progress}%` }}></div>
-           </div>
+          <div className="space-y-3">
+            <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
+              <div className="bg-gradient-to-r from-primary to-accent h-4 rounded-full transition-all duration-500 ease-out" style={{ width: `${progress}%` }}>
+                <div className="h-full bg-white/20 animate-pulse"></div>
+              </div>
+            </div>
+            <p className="text-sm text-center text-gray-600 font-medium">Translating... {progress}%</p>
+          </div>
         )}
 
         {downloadUrl && (
-          <div className="text-center p-4 bg-green-50 border border-success/50 rounded-md">
-            <p className="text-green-800 mb-4">Translation complete!</p>
+          <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 border border-success/50 rounded-xl">
+            <div className="mb-4">
+              <svg className="w-16 h-16 text-success mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <p className="text-green-800 font-semibold text-lg">Translation complete!</p>
+            </div>
             <a
               href={downloadUrl}
               download={getOutputFilename()}
-              className="inline-block bg-success hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition-colors duration-300"
+              className="inline-block bg-success hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Download Translated .SRT
             </a>
@@ -248,9 +266,16 @@ const Translator: React.FC<TranslatorProps> = ({ apiKey, onClearApiKey }) => {
       </div>
 
       {error && (
-        <div className="bg-red-50 text-danger border border-danger/50 p-3 rounded-md text-sm">
-          <p className="font-bold">Error:</p>
-          <p>{error}</p>
+        <div className="bg-red-50 text-danger border border-danger/30 p-4 rounded-xl text-sm animate-fade-in">
+          <div className="flex items-start space-x-3">
+            <svg className="w-5 h-5 text-danger flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            <div>
+              <p className="font-bold">Error:</p>
+              <p>{error}</p>
+            </div>
+          </div>
         </div>
       )}
     </div>

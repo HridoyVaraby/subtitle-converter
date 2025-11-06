@@ -31,25 +31,31 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-dark font-sans flex flex-col">
-      <header className="py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-200">
+      <header className="py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-200" role="banner">
         <h1 className="text-xl md:text-2xl font-bold tracking-tight">
           <span className="text-primary">Varabit</span> Subtitle Translator
         </h1>
-        <a href="https://github.com/HridoyVaraby/subtitle-translator" target="_blank" rel="noopener noreferrer" className="text-dark hover:text-accent transition-colors">
+        <a
+          href="https://github.com/HridoyVaraby/subtitle-translator"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-dark hover:text-accent transition-colors"
+          aria-label="View on GitHub"
+        >
           {GithubIcon}
         </a>
       </header>
-      
-      <main className="flex-grow">
+
+      <main className="flex-grow" role="main">
         {!isLoggedIn ? (
           <LandingPage onGetStarted={handleLogin} />
         ) : (
           <Dashboard />
         )}
       </main>
-      
-      <footer className="text-center py-4 px-6 text-sm text-gray-500 border-t border-gray-200">
-        Developed by <a href="https://varabit.com" className="text-primary hover:text-accent">Varabit web Design & Development</a>
+
+      <footer className="text-center py-4 px-6 text-sm text-gray-500 border-t border-gray-200" role="contentinfo">
+        Developed by <a href="https://varabit.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent">Varabit web Design & Development</a>
       </footer>
     </div>
   );

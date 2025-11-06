@@ -18,12 +18,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   return (
     <div className="min-h-screen hero-gradient">
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-20 md:py-32 text-center flex flex-col items-center justify-center relative">
-        
+      <section className="container mx-auto px-6 py-20 md:py-32 text-center flex flex-col items-center justify-center relative" aria-label="Hero Section">
+
         {/* Decorative Background Elements */}
-        <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        
+        <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" aria-hidden="true"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true"></div>
+
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center bg-primary/10 text-primary rounded-full px-6 py-2 mb-6 text-sm font-medium">
@@ -47,38 +47,39 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <button
               onClick={onGetStarted}
               className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-12 rounded-full text-xl shadow-2xl glow-primary eye-catching-button"
+              aria-label="Get started with subtitle translation"
             >
               Get Started
             </button>
           </div>
           
           <div className="mt-16 animate-fade-in-up stagger-4">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-gray-500">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <ul className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-gray-500" role="list">
+              <li className="flex items-center">
+                <svg className="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 Powered by Google Gemini
-              </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 Cinematic Flow Preservation
-              </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 Multiple Language Support
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Features Section */}
-      <div className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-20" aria-label="Features">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-black text-dark mb-4">
             Why Choose <span className="text-primary">Varabit</span>?
@@ -87,7 +88,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             Experience the future of subtitle translation with AI that understands context, emotion, and cultural nuances.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <Feature
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8"><path d="M3 11V9a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/><path d="M4 12a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Z"/><path d="M8 18v-2"/><path d="M16 18v-2"/></svg>}
@@ -111,10 +112,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             Maintain full privacy and control with your own Google Gemini API key. No data stored on our servers—everything stays with you.
           </Feature>
         </div>
-      </div>
+      </section>
 
       {/* Call to Action Section */}
-      <div className="container mx-auto px-6 py-20 text-center">
+      <section className="container mx-auto px-6 py-20 text-center" aria-label="Call to Action">
         <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-12 max-w-4xl mx-auto border border-primary/10">
           <h3 className="text-3xl md:text-4xl font-black text-dark mb-4">
             Ready to Transform Your Subtitles?
@@ -124,12 +125,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </p>
           <button
             onClick={onGetStarted}
-            className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl transition-all duration-300"
+            className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/30"
+            aria-label="Start translating subtitles now"
           >
             Start Translating Now
           </button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

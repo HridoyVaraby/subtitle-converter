@@ -1,0 +1,32 @@
+/* TEAM */
+Company: Varabit Web Design & Development
+Website: https://varabit.com
+Email: info@varabit.com
+Location: Remote-First / Global
+
+Project Lead: Varabit Development Team
+Developers: Varabit Development Team
+Designer: Varabit Design Team
+Project Manager: Varabit Project Management
+
+/* THANKS */
+Google Gemini AI Team - For providing the powerful AI translation API
+React Team - For the excellent React framework
+Vite Team - For the lightning-fast build tool
+Tailwind CSS Team - For the utility-first CSS framework
+
+/* SITE */
+Built with: React 19, TypeScript, Vite, Tailwind CSS
+Deployed on: Vercel
+Last update: November 2025
+
+/* TECHNOLOGY */
+Frontend Framework: React 19
+Language: TypeScript
+Build Tool: Vite
+Styling: Tailwind CSS
+AI API: Google Gemini
+Hosting: Vercel
+
+/* MISSION */
+To make subtitle translation accessible, accurate, and emotionally intelligent for content creators and distributors worldwide.

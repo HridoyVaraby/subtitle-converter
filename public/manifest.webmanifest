@@ -1,0 +1,17 @@
+{
+  "name": "SubTranslate - Natural Subtitle Translation",
+  "short_name": "SubTranslate",
+  "description": "AI-powered subtitle translation with emotional fidelity",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#3F51B5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
