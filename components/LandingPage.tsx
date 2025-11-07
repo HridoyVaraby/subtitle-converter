@@ -5,12 +5,12 @@ interface LandingPageProps {
 }
 
 const Feature: React.FC<{ icon: React.ReactNode; title: string; children: React.ReactNode; delay?: string }> = ({ icon, title, children, delay }) => (
-  <div className={`bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:border-primary/20 animate-fade-in-up ${delay || ''}`}>
-    <div className="bg-gradient-to-br from-primary/10 to-accent/10 text-primary rounded-2xl p-4 mb-6 inline-block">
+  <div className={`bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-5 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:border-primary/20 animate-fade-in-up ${delay || ''}`}>
+    <div className="bg-gradient-to-br from-primary/10 to-accent/10 text-primary rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6 inline-block">
       {icon}
     </div>
-    <h3 className="text-xl font-bold mb-3 text-dark">{title}</h3>
-    <p className="text-gray-600 leading-relaxed">{children}</p>
+    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-dark">{title}</h3>
+    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{children}</p>
   </div>
 );
 
@@ -32,21 +32,22 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-dark leading-tight mb-6 animate-fade-in-up stagger-1">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-dark leading-tight mb-4 sm:mb-6 animate-fade-in-up stagger-1">
             Translate Movie Subtitles{' '}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Naturally</span>
           </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up stagger-2">
+
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-12 px-4 leading-relaxed animate-fade-in-up stagger-2">
             Preserve the <strong className="text-primary">emotion, tone, and meaning</strong> — not just the words.
-            <br />
-            Upload your <code className="bg-gray-100 text-primary px-3 py-1 rounded-lg font-semibold">.srt</code> file and get a beautifully translated subtitle that feels native to your audience.
+            <br className="hidden sm:block" />
+            <span className="block mt-2 sm:mt-0"></span>
+            Upload your <code className="bg-gray-100 text-primary px-2 sm:px-3 py-1 rounded-lg font-semibold text-sm sm:text-base">.srt</code> file and get a beautifully translated subtitle that feels native to your audience.
           </p>
-          
-          <div className="animate-fade-in-up stagger-3">
+
+          <div className="animate-fade-in-up stagger-3 px-4">
             <button
               onClick={onGetStarted}
-              className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-12 rounded-full text-xl shadow-2xl glow-primary eye-catching-button"
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white font-bold py-4 sm:py-5 px-8 sm:px-12 rounded-full text-lg sm:text-xl shadow-2xl glow-primary eye-catching-button touch-manipulation"
               aria-label="Get started with subtitle translation"
             >
               Get Started
@@ -80,16 +81,16 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
       {/* Features Section */}
       <section className="container mx-auto px-6 py-20" aria-label="Features">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-black text-dark mb-4">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-dark mb-4">
             Why Choose <span className="text-primary">Varabit</span>?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Experience the future of subtitle translation with AI that understands context, emotion, and cultural nuances.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto px-4">
           <Feature
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8"><path d="M3 11V9a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/><path d="M4 12a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Z"/><path d="M8 18v-2"/><path d="M16 18v-2"/></svg>}
             title="Meaning-First Translation"
@@ -115,17 +116,17 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="container mx-auto px-6 py-20 text-center" aria-label="Call to Action">
-        <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-12 max-w-4xl mx-auto border border-primary/10">
-          <h3 className="text-3xl md:text-4xl font-black text-dark mb-4">
+      <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center" aria-label="Call to Action">
+        <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 max-w-4xl mx-auto border border-primary/10">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-dark mb-3 sm:mb-4">
             Ready to Transform Your Subtitles?
           </h3>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
             Join thousands of content creators who trust Varabit for professional-quality subtitle translation.
           </p>
           <button
             onClick={onGetStarted}
-            className="bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/30"
+            className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white font-bold py-4 px-8 sm:px-10 rounded-full text-base sm:text-lg shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/30 touch-manipulation"
             aria-label="Start translating subtitles now"
           >
             Start Translating Now

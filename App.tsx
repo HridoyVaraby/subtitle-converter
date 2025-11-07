@@ -75,19 +75,45 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="text-center py-8 px-6 text-sm text-gray-500 border-t border-gray-200 bg-gray-50" role="contentinfo">
+      <footer className="text-center py-6 sm:py-8 px-4 sm:px-6 text-sm text-gray-500 border-t border-gray-200 bg-gray-50" role="contentinfo">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-4">
-            <p className="text-gray-600 mb-2">
-              Developed by <a href="https://varabit.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent">Varabit web Design & Development</a>
+          <div className="mb-5 sm:mb-6">
+            <p className="text-gray-600 mb-3 px-2 text-sm sm:text-base leading-relaxed">
+              Developed by <a href="https://varabit.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-medium transition-colors">Varabit Web Design & Development</a>
             </p>
-            <p className="text-xs text-gray-500">© 2025 Varabit Web Design & Development. All rights reserved.</p>
+            <p className="text-xs sm:text-sm text-gray-500">© 2025 Varabit Web Design & Development. All rights reserved.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs">
-            <button onClick={() => handleShowPolicy('privacy')} className="text-gray-500 hover:text-primary transition-colors">Privacy Policy</button>
-            <button onClick={() => handleShowPolicy('terms')} className="text-gray-500 hover:text-primary transition-colors">Terms of Service</button>
-            <button onClick={() => handleShowPolicy('cookie')} className="text-gray-500 hover:text-primary transition-colors">Cookie Policy</button>
-            <button onClick={() => handleShowPolicy('acceptable-use')} className="text-gray-500 hover:text-primary transition-colors">Acceptable Use</button>
+
+          <div className="border-t border-gray-200 pt-4 sm:pt-5">
+            <p className="text-xs text-gray-400 mb-3 sm:mb-4 font-medium tracking-wide uppercase">
+              Legal
+            </p>
+            <div className="grid grid-cols-2 xs:grid-cols-4 gap-2 sm:gap-3 max-w-md sm:max-w-none mx-auto px-2">
+              <button
+                onClick={() => handleShowPolicy('privacy')}
+                className="text-gray-500 hover:text-primary hover:bg-gray-100 transition-all duration-200 py-3 px-2 min-h-[48px] sm:min-h-[44px] rounded-lg text-xs sm:text-sm font-medium touch-manipulation"
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() => handleShowPolicy('terms')}
+                className="text-gray-500 hover:text-primary hover:bg-gray-100 transition-all duration-200 py-3 px-2 min-h-[48px] sm:min-h-[44px] rounded-lg text-xs sm:text-sm font-medium touch-manipulation"
+              >
+                Terms of Service
+              </button>
+              <button
+                onClick={() => handleShowPolicy('cookie')}
+                className="text-gray-500 hover:text-primary hover:bg-gray-100 transition-all duration-200 py-3 px-2 min-h-[48px] sm:min-h-[44px] rounded-lg text-xs sm:text-sm font-medium touch-manipulation"
+              >
+                Cookie Policy
+              </button>
+              <button
+                onClick={() => handleShowPolicy('acceptable-use')}
+                className="text-gray-500 hover:text-primary hover:bg-gray-100 transition-all duration-200 py-3 px-2 min-h-[48px] sm:min-h-[44px] rounded-lg text-xs sm:text-sm font-medium touch-manipulation"
+              >
+                Acceptable Use
+              </button>
+            </div>
           </div>
         </div>
       </footer>

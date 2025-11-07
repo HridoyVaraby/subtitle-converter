@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Varabit Subtitle Translator" />
+    <meta name="format-detection" content="telephone=no" />
 
     <!-- Primary Meta Tags -->
     <title>Varabit Subtitle Translator — Natural Subtitle Translation | Powered by Google Gemini</title>
@@ -81,6 +86,9 @@
             animation: {
               'fade-in': 'fadeIn 0.6s ease-out forwards',
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            screens: {
+              'xs': '475px',
             }
           }
         }
@@ -90,6 +98,27 @@
       body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+
+      /* Mobile touch improvements */
+      .touch-manipulation {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* Better button press for mobile */
+      @media (hover: none) and (pointer: coarse) {
+        button:active, a:active {
+          transform: scale(0.98);
+        }
+      }
+
+      /* Footer improvements */
+      footer button:active {
+        background-color: rgba(0, 0, 0, 0.05);
+        transform: scale(0.95);
       }
 
       /* Subtle fade-in animations */
