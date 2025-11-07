@@ -6,24 +6,24 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://subtitle-translator.vercel.app/</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://subtitletranslator.varabit.com/</loc>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Index page -->
   <url>
-    <loc>https://subtitle-translator.vercel.app/index.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://subtitletranslator.varabit.com/index.html</loc>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Manifest for PWA -->
   <url>
-    <loc>https://subtitle-translator.vercel.app/manifest.json</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://subtitletranslator.varabit.com/manifest.json</loc>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

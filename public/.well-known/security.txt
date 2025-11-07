@@ -6,7 +6,7 @@ Policy: https://varabit.com/security-policy
 
 Hiring: https://varabit.com/careers
 
-Canonical: https://subtitle-translator.vercel.app/.well-known/security.txt
+Canonical: https://subtitletranslator.varabit.com/.well-known/security.txt
 
 # Varabit Subtitle Translator Security Policy
 

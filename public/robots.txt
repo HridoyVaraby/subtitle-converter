@@ -39,4 +39,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://subtitle-translator.vercel.app/sitemap.xml
+Sitemap: https://subtitletranslator.varabit.com/sitemap.xml

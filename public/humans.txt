@@ -17,7 +17,7 @@ Tailwind CSS Team - For the utility-first CSS framework
 
 /* SITE */
 Built with: React 19, TypeScript, Vite, Tailwind CSS
-Deployed on: Vercel
+Deployed on: Varabit Hosting
 Last update: November 2025
 
 /* TECHNOLOGY */
@@ -26,7 +26,7 @@ Language: TypeScript
 Build Tool: Vite
 Styling: Tailwind CSS
 AI API: Google Gemini
-Hosting: Vercel
+Hosting: Varabit
 
 /* MISSION */
 To make subtitle translation accessible, accurate, and emotionally intelligent for content creators and distributors worldwide.

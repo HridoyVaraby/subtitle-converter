@@ -6,20 +6,20 @@ SubTranslate is a modern React-based subtitle translation tool that leverages Go
 
 ## Features
 
-- [AI-Powered Translation](https://subtitle-translator.vercel.app/): Powered by Google Gemini AI for contextually-aware subtitle translation
-- [Multi-Language Support](https://subtitle-translator.vercel.app/): Supports 100+ source and target languages
-- [SRT Format Support](https://subtitle-translator.vercel.app/): Full support for standard .subtitle files with timing codes
-- [Preserve Formatting](https://subtitle-translator.vercel.app/): Maintains subtitle positioning, styling, and timing information
-- [Natural Tone Translation](https://subtitle-translator.vercel.app/): Focuses on emotional fidelity and cinematic flow
-- [Drag & Drop Interface](https://subtitle-translator.vercel.app/): Easy file upload with intuitive user experience
-- [Progressive Web App](https://subtitle-translator.vercel.app/): Installable PWA with offline capabilities
+- [AI-Powered Translation](https://subtitletranslator.varabit.com/): Powered by Google Gemini AI for contextually-aware subtitle translation
+- [Multi-Language Support](https://subtitletranslator.varabit.com/): Supports 100+ source and target languages
+- [SRT Format Support](https://subtitletranslator.varabit.com/): Full support for standard .subtitle files with timing codes
+- [Preserve Formatting](https://subtitletranslator.varabit.com/): Maintains subtitle positioning, styling, and timing information
+- [Natural Tone Translation](https://subtitletranslator.varabit.com/): Focuses on emotional fidelity and cinematic flow
+- [Drag & Drop Interface](https://subtitletranslator.varabit.com/): Easy file upload with intuitive user experience
+- [Progressive Web App](https://subtitletranslator.varabit.com/): Installable PWA with offline capabilities
 
 ## Documentation
 
-- [Project Overview](https://subtitle-translator.vercel.app/): Homepage with feature descriptions and usage instructions
-- [API Key Setup](https://subtitle-translator.vercel.app/): Instructions for obtaining and configuring Google Gemini API key
-- [Supported Formats](https://subtitle-translator.vercel.app/): Information about .srt subtitle file compatibility
-- [Language Pairs](https://subtitle-translator.vercel.app/): Complete list of supported translation languages
+- [Project Overview](https://subtitletranslator.varabit.com/): Homepage with feature descriptions and usage instructions
+- [API Key Setup](https://subtitletranslator.varabit.com/): Instructions for obtaining and configuring Google Gemini API key
+- [Supported Formats](https://subtitletranslator.varabit.com/): Information about .srt subtitle file compatibility
+- [Language Pairs](https://subtitletranslator.varabit.com/): Complete list of supported translation languages
 
 ## Technical Details
 
